@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "427073971770",
+    "project_id": "fitway-118a2",
+    "storage_bucket": "fitway-118a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427073971770:android:225b8a52157a35f169b703",
+        "android_client_info": {
+          "package_name": "com.cuc.fitway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427073971770-ffu3gi6tesb7uf7h5li9mga81evk2vmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzNgzNm_Mj3jD7DKyO127ggLK4NO1SWqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427073971770-ffu3gi6tesb7uf7h5li9mga81evk2vmr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

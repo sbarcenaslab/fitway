@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FitWay</string>
+    <string name="register_copy">Please complete the data to live the Fitway experience.</string>
+    <string name="register_label">Register</string>
+    <string name="home_label">Home</string>
+    <string name="product_label">Product</string>
+    <string name="cart_label">Cart</string>
+    <string name="login_main_text">Welcome to Fitway, below you can see a entire list of all our products.</string>
+    <string name="login_button_text">Login</string>
+    <string name="create_an_account_text">Create an account</string>
+    <string name="nick_name_hint">Nick name</string>
+    <string name="add_product_button">Add</string>
+    <string name="product_description_hint">Product description</string>
+    <string name="product_name_hint">Product name</string>
+    <string name="register_button_text">Register</string>
+    <string name="email_hint">Email</string>
+</resources>
