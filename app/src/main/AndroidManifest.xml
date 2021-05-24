@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitWay">
-        <activity android:name=".AddProductActivity"
-            android:parentActivityName=".AdminHomeActivity"
-            />
+        <activity android:name=".ThanksActivity"></activity>
+        <activity
+            android:name=".AddProductActivity"
+            android:parentActivityName=".AdminHomeActivity" />
         <activity android:name=".AdminHomeActivity" />
         <activity
             android:name=".CartActivity"

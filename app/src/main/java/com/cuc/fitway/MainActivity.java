@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+
     public void onLogin(View view) {
         try {
             Toast.makeText(getBaseContext(), "Reason can not be blank", Toast.LENGTH_SHORT).show();

@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 
 import com.cuc.fitway.entities.Products;
 
@@ -16,27 +18,42 @@ public class HomeActivity extends AppCompatActivity {
 
     ArrayList<Products> products = new ArrayList<Products>();
     RecyclerView recycler;
+    private final static String QUERY = "SELECT * FROM products" ;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        ConnectionSQLiteHelper conn = new ConnectionSQLiteHelper(this, "bd_fitway", null, 1);
-        SQLiteDatabase db = conn.getReadableDatabase();
-        String[] fields = {"id", "name", "description"};
-        Cursor cursor = db.query("products", fields, null, null, null, null, null);
-
-        while(cursor.moveToNext()) {
-            int id =  Integer.parseInt(cursor.getString(0));
-            int name =  Integer.parseInt(cursor.getString(0));
-            int description =  Integer.parseInt(cursor.getString(0));
-
-            new Products()
-        }
-
         recycler = (RecyclerView) findViewById(R.id.recycler_id);
         recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        String[] fields = {"id", "name", "description"};
+        ConnectionSQLiteHelper conn = new ConnectionSQLiteHelper(this, "bd_fitway", null, 1);
+        SQLiteDatabase db = conn.getReadableDatabase();
+        Cursor cursor= db.rawQuery(QUERY,null);
+
+        while(cursor.moveToNext()) {
+            String name =  cursor.getString(1);
+            String description =  cursor.getString(2);
+            Products product = new Products(1, name, description);
+            products.add(product);
+        }
+
+        cursor.close();
+
+
+
+        AdapterProduct adapterProduct = new AdapterProduct(products);
+        recycler.setAdapter(adapterProduct);
     }
+
+    public void onBuy(View view) {
+        Intent intent = new Intent(this, ThanksActivity.class);
+        startActivity(intent);
+    }
+
+
+
 }

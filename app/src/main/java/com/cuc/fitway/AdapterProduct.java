@@ -1,20 +1,20 @@
 package com.cuc.fitway;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.cuc.fitway.entities.Products;
 
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHolderData> {
+public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHolderData>{
 
     ArrayList<Products> products;
 
@@ -41,16 +41,20 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
     public class ViewHolderData extends RecyclerView.ViewHolder {
 
         TextView name, description;
+        Button button;
 
         public ViewHolderData(View itemView) {
             super(itemView);
             name = (TextView) itemView.findViewById((R.id.product_name));
             description = (TextView) itemView.findViewById((R.id.product_description));
+            button = itemView.findViewById(R.id.button3);
         }
 
         public void assignData(Products product) {
             name.setText(product.getName());
             description.setText(product.getDescription());
         }
+
+
     }
 }

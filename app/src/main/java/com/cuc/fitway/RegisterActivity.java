@@ -42,24 +42,30 @@ public class RegisterActivity extends AppCompatActivity {
             values.put("first_name", firstName.getText().toString());
             values.put("last_name", lastName.getText().toString());
             values.put("nice_name", niceName.getText().toString());
-            values.put("rol", "admin");
-            Long id  = db.insert("users", "id", values);
             ContentValues valuesDetail = new ContentValues();
-            valuesDetail.put("email", email.getText().toString());
-            valuesDetail.put("address", address.getText().toString());
-            valuesDetail.put("phone", phone.getText().toString());
-            valuesDetail.put("user_id", id);
-
+            Long id;
             boolean isChecked = isAdmin.isChecked();
             if(isChecked) {
-                valuesDetail.put("rol", "admin");
-                Intent intent = new Intent(this, HomeActivity.class);
+                values.put("rol", "admin");
+                Intent intent = new Intent(this, AdminHomeActivity.class);
+                id = db.insert("users", "id", values);
+                valuesDetail.put("email", email.getText().toString());
+                valuesDetail.put("address", address.getText().toString());
+                valuesDetail.put("phone", phone.getText().toString());
+                valuesDetail.put("user_id", id);
                 intent.putExtra("user_id", id );
+                db.insert("users_detail", "id", valuesDetail);
                 startActivity(intent);
             } else {
-                valuesDetail.put("rol", "user");
-                Intent intent = new Intent(this, AdminHomeActivity.class);
+                values.put("rol", "user");
+                id = db.insert("users", "id", values);
+                valuesDetail.put("email", email.getText().toString());
+                valuesDetail.put("address", address.getText().toString());
+                valuesDetail.put("phone", phone.getText().toString());
+                valuesDetail.put("user_id", id);
+                Intent intent = new Intent(this, HomeActivity.class);
                 intent.putExtra("user_id", id );
+                db.insert("users_detail", "id", valuesDetail);
                 startActivity(intent);
             }
         } catch (Exception e) {
