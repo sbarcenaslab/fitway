@@ -47,6 +47,7 @@ Al accionar el boton (+):
 * Agregar toast para notificar errores de manera mas intuitiva.
 * Añadir validaciones a los campos.
 * Añadir carrito de compras.
+* Algunos de los campos y tablas de la base de datos no fueron utilizados a cabalidad por cuestión de timepo. Pero pertenecen a la expectativa de la funcionalidad final de la misma.
 
 Presentado por:  
 Sebastian Bárcenas.
